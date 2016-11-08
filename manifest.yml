@@ -1,0 +1,16 @@
+---
+declared-services:
+  tone-analyzer-service:
+    label: tone_analyzer
+    plan: beta
+applications:
+- services:
+  - tone-analyzer-service
+  name: analyzerr
+  command: node app.js
+  path: .
+  memory: 512MB
+  env:
+    NODE_ENV: production
+    SECURE_EXPRESS: 1
+  host: analyzerr
